@@ -1,0 +1,33 @@
+.nx-trust {
+  min-height: 110vh;
+  display: grid;
+  align-content: center;
+  padding: 9vw 7vw;
+  background: #fffdf8;
+  border-block: 1px solid var(--line);
+}
+
+.nx-trust h2 {
+  max-width: 860px;
+  margin: 0;
+  font: 700 clamp(2.6rem, 5vw, 5.6rem)/0.96 var(--serif);
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+.nx-trust-statements {
+  margin-top: 80px;
+  border-top: 1px solid var(--line);
+}
+
+.nx-trust-statements p {
+  margin: 0;
+  padding: 38px 0;
+  border-bottom: 1px solid var(--line);
+  font: 650 clamp(2.3rem, 5vw, 5.8rem)/1 var(--serif);
+  letter-spacing: -0.055em;
+}
+
+.nx-trust-statements p::first-letter {
+  color: var(--burgundy);
+}
