@@ -13,21 +13,38 @@
 
 .nx-platform-header {
   position: absolute;
-  top: 112px;
+  top: 96px;
   left: 7vw;
-  right: 7vw;
   z-index: 3;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 32px;
-  align-items: end;
   pointer-events: none;
+  padding-bottom: 32px;
+  background: linear-gradient(to bottom, var(--paper) 60%, transparent);
+  padding-right: 7vw;
+  right: 0;
 }
 
 .nx-platform-header h2 {
-  max-width: 760px;
-  font-size: clamp(2.5rem, 4.4vw, 5.1rem);
-  line-height: 0.98;
+  max-width: 600px;
+  font-size: clamp(1.6rem, 2.8vw, 3rem);
+  line-height: 1.08;
+  margin: 0;
+}
+
+.nx-platform-footer {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.nx-platform-footer .nx-kicker {
+  margin: 0;
 }
 
 .nx-platform-index {
@@ -37,14 +54,14 @@
 }
 
 .nx-platform-index span {
-  width: 34px;
-  height: 34px;
+  width: 26px;
+  height: 26px;
   display: grid;
   place-items: center;
   border-radius: 999px;
   border: 1px solid var(--line);
   color: var(--muted);
-  font-size: 11px;
+  font-size: 9px;
   font-weight: 800;
   transition: all 0.25s ease;
   cursor: pointer;
@@ -65,7 +82,7 @@
 .nx-division-panel {
   width: 100vw;
   flex: 0 0 100vw;
-  padding: 300px 7vw 6vw;
+  padding: 340px 7vw 6vw;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(360px, 0.9fr);
   gap: 6vw;
@@ -155,14 +172,16 @@
     top: 90px;
     left: 22px;
     right: 22px;
-    display: block;
+    padding-right: 22px;
+  }
+  .nx-platform-footer {
+    bottom: 28px;
   }
   .nx-platform-index {
-    margin-top: 24px;
     flex-wrap: wrap;
   }
   .nx-division-panel {
-    padding: 280px 22px 42px;
+    padding: 320px 22px 120px;
     gap: 28px;
   }
   .nx-proof-row {

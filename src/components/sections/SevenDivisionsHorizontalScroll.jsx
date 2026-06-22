@@ -32,8 +32,10 @@ export function SevenDivisionsHorizontalScroll() {
     <section className="nx-platform-scroll" ref={containerRef}>
       <div className="nx-platform-sticky">
         <div className="nx-platform-header">
-          <p className="nx-kicker">Chapter Three</p>
           <h2>One intelligence platform. Seven specialized divisions.</h2>
+        </div>
+        <div className="nx-platform-footer">
+          <p className="nx-kicker">Chapter Three</p>
           <div className="nx-platform-index">
             {divisions.map((division, index) => (
               <span

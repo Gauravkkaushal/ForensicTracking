@@ -31,7 +31,7 @@ export function NexFusionCorrelationSVG() {
           </p>
         </motion.div>
 
-        <svg className="nx-correlation-svg" viewBox="0 0 1200 720" aria-hidden="true">
+        <svg className="nx-correlation-svg" viewBox="0 0 1400 720" aria-hidden="true">
           <defs>
             <filter id="paperShadow" x="-20%" y="-20%" width="140%" height="140%">
               <feDropShadow dx="0" dy="12" stdDeviation="18" floodOpacity="0.08" />
@@ -40,7 +40,7 @@ export function NexFusionCorrelationSVG() {
           {[60, 210, 360, 510].map((y, index) => (
             <motion.path
               key={y}
-              d={`M 170 ${y + 40} C 410 ${y - 60} 650 ${360 + index * 18} 820 360`}
+              d={`M 400 ${y + 40} C 560 ${y - 60} 750 ${360 + index * 18} 920 360`}
               className="nx-link-path"
               style={{ pathLength }}
             />
@@ -54,27 +54,27 @@ export function NexFusionCorrelationSVG() {
               transition={{ delay: index * 0.08, duration: 0.55 }}
               filter="url(#paperShadow)"
             >
-              <rect x="72" y={60 + index * 150} width="220" height="88" rx="18" className="nx-svg-card" />
-              <text x="98" y={103 + index * 150} className="nx-svg-label">
+              <rect x="32" y={60 + index * 150} width="370" height="88" rx="18" className="nx-svg-card" />
+              <text x="72" y={103 + index * 150} className="nx-svg-label">
                 {source.label}
               </text>
-              <text x="98" y={127 + index * 150} className="nx-svg-meta">
+              <text x="72" y={127 + index * 150} className="nx-svg-meta">
                 {source.meta}
               </text>
             </motion.g>
           ))}
           <motion.g style={{ opacity: modelOpacity, scale: modelScale }} filter="url(#paperShadow)">
-            <rect x="792" y="252" width="316" height="216" rx="28" className="nx-svg-core" />
-            <text x="834" y="316" className="nx-svg-core-label">
+            <rect x="892" y="232" width="400" height="256" rx="28" className="nx-svg-core" />
+            <text x="934" y="306" className="nx-svg-core-label">
               NexFusion
             </text>
-            <text x="834" y="353" className="nx-svg-core-title">
+            <text x="934" y="348" className="nx-svg-core-title">
               Unified Case Model
             </text>
-            <text x="834" y="392" className="nx-svg-meta nx-svg-meta-light">
+            <text x="934" y="392" className="nx-svg-meta nx-svg-meta-light">
               Entity resolution
             </text>
-            <text x="834" y="423" className="nx-svg-meta nx-svg-meta-light">
+            <text x="934" y="423" className="nx-svg-meta nx-svg-meta-light">
               Relationship confidence
             </text>
           </motion.g>
