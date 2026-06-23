@@ -3,9 +3,28 @@ import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-mot
 import { divisions } from "../../constants/data";
 import "./SevenDivisionsHorizontalScroll.css";
 
+// Import product division showcase images
+import faceSearchImg from "../../assets/Face_Search.jpeg";
+import videoAnalysisImg from "../../assets/Video_Analysis.jpeg";
+import osintImg from "../../assets/OSINT.jpeg";
+import deepfakeDetectionImg from "../../assets/Deepfake_detection.jpeg";
+import crime3DImg from "../../assets/3D_crime.jpeg";
+import evidenceGraphImg from "../../assets/Evidence_Graph.jpeg";
+import caseIntelligenceImg from "../../assets/Case_Intelligence.jpeg";
+
+const divisionImages = {
+  identity: faceSearchImg,
+  digital: videoAnalysisImg,
+  osint: osintImg,
+  audio: deepfakeDetectionImg,
+  document: crime3DImg,
+  fusion: evidenceGraphImg,
+  command: caseIntelligenceImg,
+};
+
 /**
- * Chapter Three: One intelligence platform. Seven specialized divisions.
- * A horizontal scroll-triggered slide deck revealing different intelligence divisions.
+ * Chapter Three: Explore our product
+ * A horizontal scroll-triggered slide deck revealing different intelligence division product interfaces.
  */
 export function SevenDivisionsHorizontalScroll() {
   const containerRef = useRef(null);
@@ -32,7 +51,7 @@ export function SevenDivisionsHorizontalScroll() {
     <section className="nx-platform-scroll" ref={containerRef}>
       <div className="nx-platform-sticky">
         <div className="nx-platform-header">
-          <h2>One intelligence platform. Seven specialized divisions.</h2>
+          <h2>Explore our product</h2>
         </div>
         <div className="nx-platform-footer">
           <p className="nx-kicker">Chapter Three</p>
@@ -51,28 +70,12 @@ export function SevenDivisionsHorizontalScroll() {
         <motion.div className="nx-platform-track" style={{ x }}>
           {divisions.map((division) => (
             <article className="nx-division-panel" key={division.id}>
-              <div className="nx-division-copy">
-                <p className="nx-kicker">{division.eyebrow}</p>
-                <h3>{division.title}</h3>
-                <p>{division.thesis}</p>
-                <div className="nx-product-pills">
-                  {division.products.map((product) => (
-                    <span key={product}>{product}</span>
-                  ))}
-                </div>
-              </div>
-              <div className="nx-proof-card">
-                {division.proof.map((step, index) => (
-                  <motion.div
-                    className="nx-proof-row"
-                    key={step}
-                    whileHover={{ x: 8 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 24 }}
-                  >
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                    <strong>{step}</strong>
-                  </motion.div>
-                ))}
+              <div className="nx-image-container">
+                <img
+                  src={divisionImages[division.id]}
+                  alt={division.title}
+                  className="nx-division-image"
+                />
               </div>
             </article>
           ))}
@@ -83,3 +86,4 @@ export function SevenDivisionsHorizontalScroll() {
 }
 
 export default SevenDivisionsHorizontalScroll;
+

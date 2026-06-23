@@ -8,16 +8,16 @@
   top: 0;
   height: 100vh;
   overflow: hidden;
-  padding: 96px 0 0;
+  padding: 60px 0 0;
 }
 
 .nx-platform-header {
   position: absolute;
-  top: 96px;
+  top: 110px;
   left: 7vw;
   z-index: 3;
   pointer-events: none;
-  padding-bottom: 32px;
+  padding-bottom: 24px;
   background: linear-gradient(to bottom, var(--paper) 60%, transparent);
   padding-right: 7vw;
   right: 0;
@@ -82,110 +82,77 @@
 .nx-division-panel {
   width: 100vw;
   flex: 0 0 100vw;
-  padding: 340px 7vw 6vw;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.9fr);
-  gap: 6vw;
-  align-items: end;
-}
-
-.nx-division-copy h3 {
-  margin: 0;
-  max-width: 700px;
-  font: 700 clamp(3rem, 5.8vw, 6.4rem)/0.92 var(--serif);
-  letter-spacing: -0.055em;
-  text-wrap: balance;
-}
-
-.nx-division-copy p:not(.nx-kicker) {
-  max-width: 650px;
-  font-size: 1.3rem;
-  line-height: 1.45;
-  color: var(--muted);
-}
-
-.nx-product-pills {
+  padding: 180px 7vw 100px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 34px;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
 }
 
-.nx-product-pills span {
+.nx-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 1300px;
+  height: 100%;
+  max-height: calc(100vh - 300px);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow), 0 35px 70px rgba(22, 21, 16, 0.16);
   border: 1px solid var(--line);
-  background: rgba(255, 253, 248, 0.58);
-  padding: 10px 14px;
-  border-radius: 999px;
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--muted);
+  background: var(--paper-deep);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.nx-proof-card {
-  background: rgba(255, 253, 248, 0.78);
-  border: 1px solid var(--line);
-  border-radius: 34px;
-  padding: 18px;
-  box-shadow: var(--shadow);
+.nx-image-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 45px 90px rgba(22, 21, 16, 0.24);
 }
 
-.nx-proof-row {
-  min-height: 86px;
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  border-bottom: 1px solid var(--line);
-  padding: 0 20px;
+.nx-division-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.nx-proof-row:last-child {
-  border-bottom: 0;
-}
-
-.nx-proof-row span {
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-}
-
-.nx-proof-row strong {
-  font-size: clamp(1.15rem, 1.75vw, 1.85rem);
-  font-family: var(--serif);
-  overflow-wrap: anywhere;
+.nx-image-container:hover .nx-division-image {
+  transform: scale(1.04);
 }
 
 @media (max-width: 1200px) {
   .nx-division-panel {
-    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.82fr);
-    gap: 4vw;
+    padding: 170px 5vw 90px;
+    align-items: flex-start;
   }
-  .nx-proof-card {
-    max-width: 520px;
-    justify-self: end;
+  .nx-image-container {
+    max-width: 1000px;
+    max-height: calc(100vh - 280px);
   }
 }
 
 @media (max-width: 900px) {
   .nx-platform-header {
-    top: 90px;
+    top: 85px;
     left: 22px;
     right: 22px;
     padding-right: 22px;
   }
   .nx-platform-footer {
-    bottom: 28px;
+    bottom: 20px;
   }
   .nx-platform-index {
     flex-wrap: wrap;
   }
   .nx-division-panel {
-    padding: 320px 22px 120px;
-    gap: 28px;
+    padding: 145px 22px 80px;
+    align-items: flex-start;
   }
-  .nx-proof-row {
-    min-height: 70px;
+  .nx-image-container {
+    max-height: calc(100vh - 250px);
+    border-radius: 20px;
   }
 }
+
+
 
